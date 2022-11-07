@@ -1,6 +1,6 @@
 # tugas-individu-2-PWL
  
-##IDENTITAS
+## IDENTITAS
 -Nama : Akbar Maulana
 -NIM : 119140151
 -Kelas : PWL
