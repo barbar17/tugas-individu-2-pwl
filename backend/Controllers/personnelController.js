@@ -10,6 +10,16 @@ const getPersonnel = (req, res) => {
     });
 }
 
+const getPersonnelbyId = (req, res) => {
+    const querySql = 'SELECT * FROM personnel WHERE id = ?';
+
+    db.query(querySql, req.params.id, (err, rows, field) => {
+        if (err) return res.status(500).json({ message: 'Ada kesalahan', error: err });
+
+        res.status(200).json({ success: true, data: rows });
+    });
+}
+
 const addPersonnel = (req, res) => {
     const data = { ...req.body };
     const querySql = 'INSERT INTO personnel SET ?';
@@ -60,4 +70,4 @@ const deletePersonnel = (req, res) => {
     });
 }
 
-module.exports = { getPersonnel, addPersonnel, editPersonnel, deletePersonnel }
+module.exports = { getPersonnel, addPersonnel, editPersonnel, deletePersonnel, getPersonnelbyId }
